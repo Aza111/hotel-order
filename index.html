@@ -17,3 +17,49 @@
             <a href="#"><li>Контакты</li></a>
         </ul>
     </nav>    
+    <div class="main">
+        <div class="order">
+        <h1>Заказ</h1>
+        <div class="input">
+            <h3>Количество человек</h3>
+            <input type="#">
+        </div>
+        <div class="input">
+            <h3>Выбор номера</h3>
+            <input type="#">
+        </div>
+            <div class="input">
+            <h3>Дата приезда</h3>
+            <input type="date" name="calendar" class="date">
+        </div>
+            <div class="input">
+            <h3>Дата отъезда</h3>
+             <input type="date" name="calendar" class="date">
+        </div>
+            <div class="input">
+                 <h3>К оплате</h3>
+                <label id="sum">asd</label>
+            </div>
+        
+        </div>
+    </div>
+        
+        
+        
+        
+    <script>
+        sum();
+        function sum()
+        {
+            var comp = document.getElementsByClassName("comp")
+        }
+           y();
+        function y()
+            {
+           var x = document.getElementsByName("calendar");
+          x[1].min=x[0].value;
+         x[0].max=x[1].value;
+        setTimeout(y, 500);
+                }
+        
+    </script>
