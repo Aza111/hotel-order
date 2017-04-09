@@ -11,23 +11,31 @@
     <div class="header">
     <nav>
         <ul>
-            <a href="#"><li>Главная</li></a>
+            <a href="https://aza111.github.io/hotel"><li>Главная</li></a>
             <a href="#"><li>О горе Эльбрус</li></a>
             <a href="#"><li>Партнеры</li></a>
-            <a href="#"><li>Контакты</li></a>
+            <a href="#" onclick="sum()"><li>Контакты</li></a>
         </ul>
     </nav>    
     <div class="main">
         <div class="order">
         <h1>Заказ</h1>
+        <h2>Стоимость одного спального места на один день равна </h2><h2 id="price"> 7500руб.  
+            </h2> <h2>Приют LeapRus располагает 24 спальными местами (2 жилых модуля: «Запад» и «Восток», в каждом модуле 12 спальных мест). Жилые модули разделены на несколько зон:<br><br>
+
+- зона гардероба и кладовой, оборудованная шкафами и полками для крупных вещей, рюкзаков и снаряжения;<br>
+
+- уютная комфортабельная спальная, рассчитанная на 12 мест;<br>
+
+- просторная и светлая кают-компания с огромным панорамным окном вдоль всей стены;<br>
+
+- каждое место оснащено спальным мешком. <br></h2>
+            <div class="table">
         <div class="input">
             <h3>Количество человек</h3>
-            <input type="#">
+            <input type="#" class="comp">
         </div>
-        <div class="input">
-            <h3>Выбор номера</h3>
-            <input type="#">
-        </div>
+       
             <div class="input">
             <h3>Дата приезда</h3>
             <input type="date" name="calendar" class="date">
@@ -38,32 +46,68 @@
         </div>
             <div class="input">
                  <h3>К оплате</h3>
-                <label id="sum">asd</label>
+                <y><input type="#" id="sum" value="0">руб.</y>
             </div>
-        
-        </div>
+            </div>
     </div>
+    </div>
+          <div class="slider">
+          <img class="slide" src="img/1.jpg">
+          <img class="slide" src="img/2.jpg">
+          <img class="slide" src="img/3.jpg">
+          <img class="slide" src="img/4.jpg">
+          <img class="slide" src="img/5.jpg">
+          <img class="slide" src="img/6.png">
+        </div>
+        
+        
         
         
         
         
     <script>
-        sum();
-        function sum()
-        {
-            var comp = document.getElementsByClassName("comp")
-        }
-           y();
-        function y()
+          var index = 0;
+        autoSlide()
+            function autoSlide()
             {
+                 var x = document.getElementsByClassName("slide");
+                index++;
+                if(index>=x.length-1)
+                   {
+                   index=1;
+                   }
+                for(i=0; i<x.length-1; i++)
+                {
+                    x[i].style.opacity="0";
+                }
+                 x[index-1].style.opacity="1";
+                setTimeout(autoSlide, 4000);
+            }
+        
+        
+           y();
+        function y(){
            var x = document.getElementsByName("calendar");
           x[1].min=x[0].value;
          x[0].max=x[1].value;
         setTimeout(y, 500);
                 }
+         order();
+        function order(){
+            var comp = document.getElementsByClassName("comp");
+            var date = document.getElementsByClassName("date");
+            var sum = document.getElementById("sum");
+            var z;
+             z = comp[0].value * 7500*(((date[1].value[8]+date[1].value[9]) - (date[0].value[8]+date[0].value[9])+1));
+            if(z>0)
+               {
+             sum.value = comp[0].value * 7500*(((date[1].value[8]+date[1].value[9]) - (date[0].value[8]+date[0].value[9])+1));
+               }
+            setTimeout(order, 50);
         
+        }
     </script>
     
        
     </body>
-    </html>
+</html>
