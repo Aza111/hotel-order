@@ -72,12 +72,16 @@ div.input
 {
     color: #DC143C;
 }
+
+
 div.slider
 {
     margin-top: -55px;
     position: relative;
     display: block;
 }
+
+
 input.date
 {
     margin-top: -3px;
@@ -88,6 +92,8 @@ input.date
     margin-top: -3px;
     width: 100px;
 }
+
+
 img.slide
 {
     margin-top: 55px;
