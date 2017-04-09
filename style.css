@@ -1,0 +1,40 @@
+a
+{text-decoration: none}
+body
+{
+    width: 1200px;
+    margin: auto;
+    background: #fff  ; height: 10000px;
+    background-image: url(img/background.jpg);
+    background-attachment:fixed;
+    font-family: 'Exo 2', sans-serif;
+}
+nav
+{
+    position: fixed;
+    background: #DC143C;
+    width: 1200px;
+    z-index: 1;
+}
+
+
+nav li 
+{
+    width: 280px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+}
+
+nav li:hover
+{
+   color: #b44d4d;
+}
+
+div.main
+{
+    background: #fff;
+    height: auto;
+    box-shadow: #000 2px 2px 20px 1px
+}
