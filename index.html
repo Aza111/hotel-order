@@ -46,7 +46,7 @@
         </div>
             <div class="input">
                  <h3>К оплате</h3>
-                <y><input type="#" id="sum" value="0">руб.</y>
+                <input type="#" id="sum" value="0"><h id = "sign">руб.</h>
             </div>
                 <a href="http://www.visa.com.kz/" target="_blank"><span>Оплатить</span></a>
             </div>
@@ -93,18 +93,24 @@
          x[0].max=x[1].value;
         setTimeout(y, 500);
                 }
-         order();
+        order();
         // Исчисление заказа
         function order(){
             var comp = document.getElementsByClassName("comp");
             var date = document.getElementsByClassName("date");
             var sum = document.getElementById("sum");
+            var sign = document.getElementById("sign")
             var z;
              z = comp[0].value * 7500*(((date[1].value[8]+date[1].value[9]) - (date[0].value[8]+date[0].value[9])+1));
-            if(z>0)
+            if(z>=0 && comp[0].value<=24)
                {
-             sum.value = comp[0].value * 7500*(((date[1].value[8]+date[1].value[9]) - (date[0].value[8]+date[0].value[9])+1));
+        sign.textContent= "руб.";
+             sum.value = z;
                }
+	    else
+		{
+		 sign.textContent= "Некорректное количество человек";
+		}
             setTimeout(order, 50);
         
         }
